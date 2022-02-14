@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"      
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context" 
+   xmlns:aop="http://www.springframework.org/schema/aop"    
+    xsi:schemaLocation="http://www.springframework.org/schema/beans    
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd    
+    http://www.springframework.org/schema/context    
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd    
+    http://www.springframework.org/schema/aop    
+    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd    ">
+
+     <bean id="book" class="Book">
+    <property name="isbn" value="43343434"></property>
+    <property name="title" value= "44"></property>
+     <property name="price" value= "mobile application"></property>
+     </bean> 
+     
+    <bean id="book1" class="Book">
+     <constructor-arg name="isbn" value="333334"></constructor-arg>
+     <constructor-arg name="price" value="33"> </constructor-arg>
+     <constructor-arg name="title" value="Machine Learning in Python"></constructor-arg>
+     </bean>
+     
+      <bean id="bookMixed" class="Book">
+     <constructor-arg name="isbn" value="334"></constructor-arg>
+     <constructor-arg name="price" value="33"> </constructor-arg>
+     <property name="title" value="java Learning in Python"></property>
+     </bean>
+     
+      <bean id="author" class="Author">
+     <property name="authorID" value="334"></property>
+     <property name="name" value="pallavi"></property>
+     <property name="country" value="India"> </property>
+     <property name="book" ref="book1"></property>
+     </bean>
+     
+     <bean class="Publisher" id="pub" init-method="publisherCreate" destroy-method="publisherDeleting">
+     </bean>
+     
+     </beans>
+   
